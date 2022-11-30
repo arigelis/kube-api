@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DATASOURCE_HOST:localhost}:5432/postgres?ssl=require&sslfactory=org.postgresql.ssl.NonValidatingFactory
+    username: postgres
+    password: root
+  jpa:
+    database-platform=org:
+      hibernate:
+        dialect:
+          PostgreSQLDialect:
+    hibernate:
+      ddl-auto=create
+
+spring.flyway.url: jdbc:postgresql://${DATASOURCE_HOST:localhost}:5432/postgres?ssl=require&sslfactory=org.postgresql.ssl.NonValidatingFactory
+spring.flyway.user: postgres
+spring.flyway.password: root

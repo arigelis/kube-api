@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: total
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /kuber-api
+            backend:
+              service:
+                name: kuber-api
+                port:
+                  number: 80
